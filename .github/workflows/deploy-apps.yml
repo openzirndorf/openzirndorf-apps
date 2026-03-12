@@ -123,8 +123,10 @@ jobs:
 
       - name: Flatten app artifacts
         run: |
-          cp -R combined/pages/. combined/
-          rm -rf combined/pages
+          if [ -d combined/pages ]; then
+            cp -R combined/pages/. combined/
+            rm -rf combined/pages
+          fi
 
       - name: Generate root index
         env:
