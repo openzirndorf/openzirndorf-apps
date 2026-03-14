@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "garagen-flohmarkt",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-03-14",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "garagen-flohmarkt",
+      "database_id": "08a53937-e880-4303-b176-c397fa70f22a",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}

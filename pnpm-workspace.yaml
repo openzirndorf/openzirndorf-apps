@@ -1,3 +1,5 @@
 packages:
   - apps/*
+  - workers/*
   - packages/*
+  - packages/trpc/*

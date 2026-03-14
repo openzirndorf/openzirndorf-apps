@@ -1,0 +1,28 @@
+{
+  "name": "@openzirndorf/garagen-flohmarkt-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "db:generate": "drizzle-kit generate",
+    "db:migrations:list:local": "wrangler d1 migrations list garagen-flohmarkt --local",
+    "db:migrations:list:remote": "wrangler d1 migrations list garagen-flohmarkt --remote",
+    "db:migrate:local": "wrangler d1 migrations apply garagen-flohmarkt --local",
+    "db:migrate:remote": "wrangler d1 migrations apply garagen-flohmarkt --remote",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev src/index.ts --local",
+    "lint": "biome check src wrangler.jsonc",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No worker tests configured yet\""
+  },
+  "dependencies": {
+    "@openzirndorf/garagen-flohmarkt-api": "workspace:*",
+    "@trpc/server": "^11.7.1",
+    "drizzle-orm": "^0.45.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260313.0",
+    "drizzle-kit": "^0.31.9",
+    "wrangler": "^4.57.1"
+  }
+}

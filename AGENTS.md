@@ -42,6 +42,7 @@ When designing new components or changing design tokens, follow this order:
 - generate primitives in `packages/ui/src/components/ui`
 - keep higher-level compositions in `packages/ui/src/components/patterns`
 - shared CSS tokens live in `packages/ui/src/styles/globals.css`
+- Cloudflare Worker services live in `workers/*`; shared app contracts and schemas live in `packages/*`
 - `:root` contains the default neutral light tokens and `.dark` contains the default neutral dark tokens
 - tokens must be extracted from the `.pen` file, not invented locally
 - do not treat raw shadcn output as finished design-system code

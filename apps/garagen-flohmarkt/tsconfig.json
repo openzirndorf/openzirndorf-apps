@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": [
+    "src",
+    "e2e",
+    "playwright",
+    "playwright.config.ts",
+    "vite.config.ts",
+    "../../packages/ui/src/types/assets.d.ts"
+  ]
+}

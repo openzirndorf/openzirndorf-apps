@@ -1,0 +1,145 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgb(0 154 0 / 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgb(217 96 32 / 0.14), transparent 28%),
+    linear-gradient(180deg, #f7faf5 0%, #ffffff 24%, #f4f6f8 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.gf-shell {
+  min-height: 100vh;
+}
+
+.gf-main {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0 4rem;
+}
+
+.gf-section {
+  margin: 0 auto;
+  width: min(var(--container), calc(100% - 2rem));
+}
+
+.gf-hero {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gf-hero-card {
+  overflow: hidden;
+  position: relative;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.98), rgb(238 247 230 / 0.94)),
+    white;
+}
+
+.gf-hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -3rem -3rem auto;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 9999px;
+  background: rgb(0 154 0 / 0.1);
+  filter: blur(4px);
+}
+
+.gf-hero-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gf-stat-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gf-stat {
+  border-radius: var(--radius);
+  border: 1px solid rgb(0 154 0 / 0.12);
+  background: rgb(255 255 255 / 0.7);
+  padding: 1rem;
+}
+
+.gf-form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gf-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.gf-field label {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.gf-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gf-list-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gf-listing-card {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.98),
+    rgb(255 255 255 / 0.92)
+  );
+}
+
+.gf-listing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+}
+
+.gf-empty {
+  padding: 1rem 0;
+  color: var(--muted-foreground);
+}
+
+.gf-error {
+  border-radius: var(--radius-sm);
+  background: rgb(185 28 28 / 0.1);
+  color: var(--destructive);
+  padding: 0.85rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .gf-main {
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .gf-hero-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.8fr);
+    align-items: start;
+  }
+
+  .gf-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gf-grid {
+    grid-template-columns: minmax(19rem, 0.9fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}

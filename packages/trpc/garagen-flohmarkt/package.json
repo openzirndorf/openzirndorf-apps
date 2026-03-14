@@ -1,0 +1,33 @@
+{
+  "name": "@openzirndorf/garagen-flohmarkt-api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "biome check src tsup.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No Garagen-Flohmarkt API contract tests configured yet\""
+  },
+  "dependencies": {
+    "@trpc/server": "^11.7.1",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  }
+}

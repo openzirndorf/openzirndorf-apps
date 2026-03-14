@@ -5,3 +5,5 @@ coverage
 storybook-static
 .DS_Store
 .claude/settings.local.json
+.wrangler
+test-results/

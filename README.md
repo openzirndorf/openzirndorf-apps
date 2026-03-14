@@ -4,7 +4,10 @@ Shared React component library for Open Zirndorf apps.
 
 ## Workspace
 
+- `workers/*`: Cloudflare Workers for app-specific edge backends.
+- `packages/trpc/*`: shared tRPC API contract packages for app-specific worker/frontend communication.
 - `packages/ui`: shared components, hooks, utilities, and shadcn configuration.
+- `packages/trpc/garagen-flohmarkt`: shared Garagen-Flohmarkt API contract package with tRPC router types.
 - `apps/storybook`: Storybook docs and visual review surface for the library.
 - `.github/workflows`: CI and release automation.
 
@@ -25,6 +28,8 @@ pnpm build-storybook
 - `CI` validates lint, typecheck, tests, package builds, and Storybook builds on pull requests and `main`.
 - `Publish Packages` runs on `main` via Changesets, opens or updates a release PR when needed, and publishes scoped packages to GitHub Packages once versions are ready.
 - `Deploy Apps` discovers deployable apps under `apps/`, builds each one with `pnpm --filter <package> build`, assigns a repository-aware base path, and publishes them to GitHub Pages under per-app subpaths.
+
+Cloudflare Workers are intentionally kept outside `apps/` so the GitHub Pages deploy workflow only picks up static frontend apps.
 
 ### GitHub Packages
 

@@ -31,6 +31,7 @@ export {
   DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog";
+export { Input } from "./components/ui/input";
 export { Mascot } from "./components/ui/mascot";
 export { Separator } from "./components/ui/separator";
 export {
@@ -43,5 +44,6 @@ export {
   SheetTitle,
   SheetTrigger,
 } from "./components/ui/sheet";
+export { Textarea } from "./components/ui/textarea";
 export { useMediaQuery } from "./hooks/use-media-query";
 export { cn } from "./lib/cn";
