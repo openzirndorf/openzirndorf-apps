@@ -1,0 +1,38 @@
+name: Add to Project
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const projectNumber = 2;
+            const org = 'openzirndorf';
+            
+            // Get project ID
+            const projectQuery = `query {
+              organization(login: "${org}") {
+                projectV2(number: ${projectNumber}) {
+                  id
+                }
+              }
+            }`;
+            const projectResult = await github.graphql(projectQuery);
+            const projectId = projectResult.organization.projectV2.id;
+            
+            // Add issue to project
+            const mutation = `mutation {
+              addProjectV2ItemById(input: {projectId: "${projectId}", contentId: "${context.payload.issue.node_id}"}) {
+                item {
+                  id
+                }
+              }
+            }`;
+            await github.graphql(mutation);
+          github-token: ${{ secrets.PROJECT_TOKEN }}
